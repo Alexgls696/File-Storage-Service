@@ -1,0 +1,10 @@
+.header-button {
+    border: 1px solid #ccc;
+    text-align: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: auto;
+}

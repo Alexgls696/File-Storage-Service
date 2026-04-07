@@ -15,3 +15,6 @@ spring:
 file:
   storage:
     path: ${FILE_STORAGE_PATH:uploads}
+
+cors:
+  addresses:  ${CORS_ALLOWED_ADDRESSES:http://localhost:5173}

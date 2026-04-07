@@ -1,0 +1,14 @@
+.files-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+}
+
+.file-container {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 4px 8px 4px 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
