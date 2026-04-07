@@ -37,6 +37,7 @@ services:
       - FILES_STORAGE_DB_URL=jdbc:postgresql://file-storage-db:5432/files_db
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - CORS_ALLOWED_ADDRESSES=${CORS_ALLOWED_ADDRESSES}
     volumes:
       - files_storage_data:/app/data
     depends_on:
@@ -45,13 +46,13 @@ services:
     networks:
       app-network:
 
-#  file-storage-frontend:
-#    build:
-#      context: frontend
-#      dockerfile: Dockerfile
-#    container_name: frontend
-#    ports:
-#      - "80:80"
-#    restart: unless-stopped
-#    networks:
-#      - app-network
+  file-storage-frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    container_name: frontend-fss
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    networks:
+      - app-network

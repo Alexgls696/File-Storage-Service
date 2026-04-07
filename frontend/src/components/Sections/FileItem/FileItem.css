@@ -1,0 +1,24 @@
+.file-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.file-item p:nth-child(2) {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e293b;
+    word-break: break-all;
+}
+
+.file-item p:first-child {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #9ca3af;
+}

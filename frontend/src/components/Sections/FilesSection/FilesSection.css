@@ -1,14 +1,41 @@
+.files-section {
+    padding: 20px 0;
+}
+
 .files-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
 }
 
 .file-container {
-    border: 1px solid gray;
-    border-radius: 8px;
-    padding: 4px 8px 4px 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.file-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.file-container button {
+    margin-top: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.file-container button:hover {
+    background-color: var(--primary-hover);
 }

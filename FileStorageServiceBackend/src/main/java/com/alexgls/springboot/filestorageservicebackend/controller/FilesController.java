@@ -22,7 +22,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/files")
 @Slf4j
-@CrossOrigin(value = "http://localhost:5173")
 public class FilesController {
 
     private final FileMetadataService fileMetadataService;

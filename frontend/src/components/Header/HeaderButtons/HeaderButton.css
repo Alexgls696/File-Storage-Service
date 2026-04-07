@@ -1,10 +1,33 @@
-.header-button {
-    border: 1px solid #ccc;
-    text-align: center;
+.header {
+    background-color: #1e293b;
+    padding: 15px 40px;
+    display: flex;
     align-items: center;
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: auto;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
+.header h3 {
+    color: #f8fafc;
+    margin: 0;
+    margin-right: auto;
+    font-size: 1.25rem;
+}
+
+.header-button {
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.header-button:hover {
+    background-color: #334155;
+    color: white;
+    border-color: var(--primary-color);
+}
+
