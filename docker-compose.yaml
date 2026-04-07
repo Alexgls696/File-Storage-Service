@@ -1,0 +1,46 @@
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  files_db_data:
+  files_storage_data:
+
+services:
+  file-storage-service-db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - files_db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  file-storage-service:
+    build: FileStorageServiceBackend
+    container_name: file-storage-service
+    ports:
+      - "8080:8080"
+    environment:
+      - FILE_STORAGE_PATH=/app/data
+    volumes:
+      - files_storage_data:/app/data
+
+    depends_on:
+      - file-storage-service-db
+
+#  file-storage-frontend:
+#    build:
+#      context: frontend
+#      dockerfile: Dockerfile
+#    container_name: frontend
+#    ports:
+#      - "80:80"
+#    restart: unless-stopped
+#    networks:
+#      - app-network

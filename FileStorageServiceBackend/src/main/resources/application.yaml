@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 150MB
+  datasource:
+    url: ${FILES_STORAGE_DB_URL:jdbc:postgresql://localhost:5432/files_db}
+    username: ${POSTGRES_USER:alexgls}
+    password: ${POSTGRES_PASSWORD:password123}
+
+
+file:
+  storage:
+    path: ${FILE_STORAGE_PATH:uploads}
